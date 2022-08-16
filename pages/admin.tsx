@@ -17,12 +17,9 @@ import style from "../styles/pages/admin.module.css";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { ToastContainer, toast } from "react-toastify";
 
-const initialValues = {
-  question: "",
-};
-
 const validationSchema = Yup.object({
   question: Yup.string().required("Required"),
+  answer: Yup.string().required("Required"),
 });
 
 const Admin = () => {
@@ -34,6 +31,11 @@ const Admin = () => {
   const [total, setTotal] = useState(0);
   const [skip, setskip] = useState(0);
   const [question, setQuestion] = useState<any>({});
+
+  const initialValues = {
+    question: question.question,
+    answer: "",
+  };
 
   if (typeof window !== "undefined") {
     const admin = JSON.parse(`${localStorage.getItem("adminTokens")}`);
@@ -70,11 +72,8 @@ const Admin = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        if (data.email) {
+        if (data.messageId) {
           toast.success("Answer Added Successfully");
-          setTimeout(() => {
-            router.push("/login");
-          }, 2000);
         } else {
           toast.error("Failed");
         }
@@ -91,7 +90,13 @@ const Admin = () => {
         {/* <div className={style.item} onClick={() => setPage("add")}>
           Add Answer
         </div> */}
-        <div className={style.item} onClick={() => setPage("view")}>
+        <div
+          className={style.item}
+          onClick={() => {
+            setPage("view");
+            searchQuestion();
+          }}
+        >
           View Question
         </div>
         <div
@@ -115,7 +120,7 @@ const Admin = () => {
               <div className={style.formContainer}>
                 <Form method="post" className={style.formBox}>
                   <div className={style.input}>
-                    <div className={style.question}>{question.question}</div>
+                    {/* <div className={style.question}>{question.question}</div> */}
 
                     <TextField
                       type="text"
@@ -125,7 +130,18 @@ const Admin = () => {
                       {...formik.getFieldProps("question")}
                       fullWidth
                     />
-                    <ErrorMessage component={TextError} name="question" />
+                    <ErrorMessage component={TextError} name="answer" />
+                  </div>
+                  <div className={style.input}>
+                    <TextField
+                      type="text"
+                      id="answer"
+                      label="Answer"
+                      variant="outlined"
+                      {...formik.getFieldProps("answer")}
+                      fullWidth
+                    />
+                    <ErrorMessage component={TextError} name="answer" />
                   </div>
                   <div className={style.input}>
                     <Button type="submit" variant="contained" color="success">
