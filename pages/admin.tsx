@@ -14,10 +14,8 @@ import TextError from "../components/atoms/textError";
 import { QuestionFormIF } from "../models/question.model";
 import { useRouter } from "next/router";
 import style from "../styles/pages/admin.module.css";
-import { useDispatch } from "react-redux";
-import { updateUserToken } from "../redux/redux-toolkit/userSlice";
-import { useAddQuestionMutation } from "../redux/api-query/questionApi";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { ToastContainer, toast } from "react-toastify";
 
 const initialValues = {
   question: "",
@@ -28,14 +26,14 @@ const validationSchema = Yup.object({
 });
 
 const Admin = () => {
-  const dispatch = useDispatch();
   const router = useRouter();
-  const [addQuestion] = useAddQuestionMutation();
   const limit = 6;
-  const [page, setPage] = useState("add");
+  const url = "https://collage-enquiry-system-chatbot.herokuapp.com/api";
+  const [page, setPage] = useState("view");
   const [questionsList, setQuestionsList] = useState([]);
   const [total, setTotal] = useState(0);
   const [skip, setskip] = useState(0);
+  const [question, setQuestion] = useState<any>({});
 
   if (typeof window !== "undefined") {
     const admin = JSON.parse(`${localStorage.getItem("adminTokens")}`);
@@ -62,16 +60,37 @@ const Admin = () => {
   }, [skip]);
 
   const onSubmit = async (values: QuestionFormIF) => {
-    const res = await addQuestion(values);
-    window.localStorage.setItem("userTokens", JSON.stringify(res));
-    dispatch(updateUserToken(res));
+    fetch(`${url}/message/${question.messageId}`, {
+      method: "PUT", // or 'PUT'
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(values),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        if (data.email) {
+          toast.success("Answer Added Successfully");
+          setTimeout(() => {
+            router.push("/login");
+          }, 2000);
+        } else {
+          toast.error("Failed");
+        }
+      })
+      .catch((error) => {
+        toast.error("Failed");
+        console.error("Error:", error);
+      });
   };
   return (
     <div className={style.container}>
       <div className={style.sidebar}>
-        <div className={style.item} onClick={() => setPage("add")}>
+        <ToastContainer />
+        {/* <div className={style.item} onClick={() => setPage("add")}>
           Add Answer
-        </div>
+        </div> */}
         <div className={style.item} onClick={() => setPage("view")}>
           View Question
         </div>
@@ -96,6 +115,8 @@ const Admin = () => {
               <div className={style.formContainer}>
                 <Form method="post" className={style.formBox}>
                   <div className={style.input}>
+                    <div className={style.question}>{question.question}</div>
+
                     <TextField
                       type="text"
                       id="question"
@@ -108,7 +129,7 @@ const Admin = () => {
                   </div>
                   <div className={style.input}>
                     <Button type="submit" variant="contained" color="success">
-                      Add Question
+                      Add Answer
                     </Button>
                   </div>
                 </Form>
@@ -133,7 +154,21 @@ const Admin = () => {
                     <Typography>{item.question}</Typography>
                   </AccordionSummary>
                   <AccordionDetails>
-                    <Typography>{item.answer}</Typography>
+                    {item.answer ? (
+                      <Typography>{item.answer}</Typography>
+                    ) : (
+                      <Button
+                        onClick={() => {
+                          setPage("add");
+                          console.log(item);
+                          setQuestion(item);
+                        }}
+                        variant="contained"
+                        color="success"
+                      >
+                        Add Answer
+                      </Button>
+                    )}
                   </AccordionDetails>
                 </Accordion>
               ))}

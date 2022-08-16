@@ -1,12 +1,5 @@
 {
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
-  "/admin": "pages/admin.html",
-  "/adminLogin": "pages/adminLogin.html",
-  "/dashboard": "pages/dashboard.html",
-  "/login": "pages/login.html",
-  "/register": "pages/register.html",
-  "/": "pages/index.js",
-  "/_document": "pages/_document.js",
-  "/404": "pages/404.html"
+  "/_document": "pages/_document.js"
 }

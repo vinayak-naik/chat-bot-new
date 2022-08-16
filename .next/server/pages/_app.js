@@ -1,317 +1,138 @@
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
 (() => {
 var exports = {};
-exports.id = 888;
-exports.ids = [888];
+exports.id = "pages/_app";
+exports.ids = ["pages/_app"];
 exports.modules = {
 
-/***/ 722:
+/***/ "./styles/components/header.module.css":
+/*!*********************************************!*\
+  !*** ./styles/components/header.module.css ***!
+  \*********************************************/
 /***/ ((module) => {
 
-// Exports
-module.exports = {
-	"container": "header_container__wIxGG",
-	"rightBox": "header_rightBox__w82ZM",
-	"connectButton": "header_connectButton__LtG7w",
-	"walletAddr": "header_walletAddr__Aj0wN",
-	"status": "header_status__7CfIJ",
-	"navContainer": "header_navContainer__PpCk5",
-	"navItem": "header_navItem__ryzmP"
-};
-
+eval("// Exports\nmodule.exports = {\n\t\"container\": \"header_container__wIxGG\",\n\t\"rightBox\": \"header_rightBox__w82ZM\",\n\t\"connectButton\": \"header_connectButton__LtG7w\",\n\t\"walletAddr\": \"header_walletAddr__Aj0wN\",\n\t\"status\": \"header_status__7CfIJ\",\n\t\"navContainer\": \"header_navContainer__PpCk5\",\n\t\"navItem\": \"header_navItem__ryzmP\"\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zdHlsZXMvY29tcG9uZW50cy9oZWFkZXIubW9kdWxlLmNzcy5qcyIsIm1hcHBpbmdzIjoiQUFBQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSIsInNvdXJjZXMiOlsid2VicGFjazovL25leHQtdHlwZXNjcmlwdC8uL3N0eWxlcy9jb21wb25lbnRzL2hlYWRlci5tb2R1bGUuY3NzPzQ5ZWIiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gRXhwb3J0c1xubW9kdWxlLmV4cG9ydHMgPSB7XG5cdFwiY29udGFpbmVyXCI6IFwiaGVhZGVyX2NvbnRhaW5lcl9fd0l4R0dcIixcblx0XCJyaWdodEJveFwiOiBcImhlYWRlcl9yaWdodEJveF9fdzgyWk1cIixcblx0XCJjb25uZWN0QnV0dG9uXCI6IFwiaGVhZGVyX2Nvbm5lY3RCdXR0b25fX0x0Rzd3XCIsXG5cdFwid2FsbGV0QWRkclwiOiBcImhlYWRlcl93YWxsZXRBZGRyX19BajB3TlwiLFxuXHRcInN0YXR1c1wiOiBcImhlYWRlcl9zdGF0dXNfXzdDZklKXCIsXG5cdFwibmF2Q29udGFpbmVyXCI6IFwiaGVhZGVyX25hdkNvbnRhaW5lcl9fUHBDazVcIixcblx0XCJuYXZJdGVtXCI6IFwiaGVhZGVyX25hdkl0ZW1fX3J5em1QXCJcbn07XG4iXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./styles/components/header.module.css\n");
 
 /***/ }),
 
-/***/ 167:
+/***/ "./components/header.tsx":
+/*!*******************************!*\
+  !*** ./components/header.tsx ***!
+  \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  "default": () => (/* binding */ _app)
-});
-
-// EXTERNAL MODULE: external "react/jsx-runtime"
-var jsx_runtime_ = __webpack_require__(997);
-// EXTERNAL MODULE: ./node_modules/react-toastify/dist/ReactToastify.css
-var ReactToastify = __webpack_require__(819);
-// EXTERNAL MODULE: external "@reduxjs/toolkit"
-var toolkit_ = __webpack_require__(184);
-// EXTERNAL MODULE: external "@reduxjs/toolkit/query/react"
-var react_ = __webpack_require__(335);
-;// CONCATENATED MODULE: ./redux/api-query/blogsApi.ts
-
-const blogsApi = (0,react_.createApi)({
-    reducerPath: "blogsApi",
-    baseQuery: (0,react_.fetchBaseQuery)({
-        baseUrl: "http://localhost:1337/api"
-    }),
-    tagTypes: [
-        "Blog"
-    ],
-    endpoints: (builder)=>({
-            blogs: builder.query({
-                query: ()=>"/blogs"
-            }),
-            blog: builder.query({
-                query: (id)=>`/blog/${id}`
-            }),
-            addBlog: builder.mutation({
-                query: (blog)=>({
-                        url: "/blog",
-                        method: "POST",
-                        body: blog
-                    })
-            }),
-            updateBlog: builder.mutation({
-                query: ({ blogId , ...rest })=>({
-                        url: `/blogs/${blogId}`,
-                        method: "PUT",
-                        body: rest
-                    })
-            }),
-            deleteBlog: builder.mutation({
-                query: (id)=>({
-                        url: `/blogs/${id}`,
-                        method: "DELETE"
-                    })
-            })
-        })
-});
-const { useBlogsQuery , useBlogQuery , useAddBlogMutation , useUpdateBlogMutation , useDeleteBlogMutation ,  } = blogsApi;
-
-;// CONCATENATED MODULE: ./redux/redux-toolkit/counterSlice.ts
-
-const initialState = {
-    counterValue: 0
-};
-const counterSlice = (0,toolkit_.createSlice)({
-    name: "counter",
-    initialState,
-    reducers: {
-        increment: (state, action)=>{
-            state.counterValue += action.payload;
-        },
-        decrement: (state, action)=>{
-            state.counterValue -= action.payload;
-        },
-        incrementByAmount: (state, action)=>{
-            state.counterValue += action.payload;
-        }
-    }
-});
-// Action creators are generated for each case reducer function
-const { increment , decrement , incrementByAmount  } = counterSlice.actions;
-/* harmony default export */ const redux_toolkit_counterSlice = (counterSlice.reducer);
-
-// EXTERNAL MODULE: ./redux/redux-toolkit/adminSlice.ts
-var adminSlice = __webpack_require__(104);
-// EXTERNAL MODULE: ./redux/redux-toolkit/userSlice.ts
-var userSlice = __webpack_require__(595);
-;// CONCATENATED MODULE: ./redux/store.ts
-
-
-
-
-
-const store = (0,toolkit_.configureStore)({
-    reducer: {
-        counter: redux_toolkit_counterSlice,
-        admin: adminSlice/* default */.ZP,
-        user: userSlice/* default */.ZP,
-        [blogsApi.reducerPath]: blogsApi.reducer
-    }
-});
-
-// EXTERNAL MODULE: external "react-redux"
-var external_react_redux_ = __webpack_require__(22);
-;// CONCATENATED MODULE: external "semantic-ui-react"
-const external_semantic_ui_react_namespaceObject = require("semantic-ui-react");
-// EXTERNAL MODULE: ./styles/components/header.module.css
-var header_module = __webpack_require__(722);
-var header_module_default = /*#__PURE__*/__webpack_require__.n(header_module);
-// EXTERNAL MODULE: external "react"
-var external_react_ = __webpack_require__(689);
-// EXTERNAL MODULE: external "next/router"
-var router_ = __webpack_require__(853);
-;// CONCATENATED MODULE: ./components/header.tsx
-
-
-
-
-
-const HeaderComponent = ()=>{
-    const router = (0,router_.useRouter)();
-    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-        className: (header_module_default()).container,
-        children: [
-            /*#__PURE__*/ jsx_runtime_.jsx("h1", {
-                onClick: ()=>router.push("/")
-                ,
-                children: "Chatbot"
-            }),
-            /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                className: (header_module_default()).rightBox,
-                children: [
-                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                        className: (header_module_default()).navContainer,
-                        children: [
-                            /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                                className: (header_module_default()).navItem,
-                                onClick: ()=>router.push("/")
-                                ,
-                                children: "Home"
-                            }),
-                            /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                                className: (header_module_default()).navItem,
-                                onClick: ()=>router.push("/dashboard")
-                                ,
-                                children: "Dashboard"
-                            }),
-                            /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                                className: (header_module_default()).navItem,
-                                onClick: ()=>router.push("/login")
-                                ,
-                                children: "Login"
-                            }),
-                            /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                                className: (header_module_default()).navItem,
-                                onClick: ()=>router.push("/register")
-                                ,
-                                children: "Register"
-                            }),
-                            /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                                className: (header_module_default()).navItem,
-                                onClick: ()=>router.push("/feedback")
-                                ,
-                                children: "Feedback"
-                            }),
-                            /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                                className: (header_module_default()).navItem,
-                                onClick: ()=>router.push("/help")
-                                ,
-                                children: "Help"
-                            })
-                        ]
-                    }),
-                    /*#__PURE__*/ jsx_runtime_.jsx(external_semantic_ui_react_namespaceObject.Button, {
-                        circular: true,
-                        inverted: true,
-                        color: "green",
-                        size: "medium",
-                        onClick: ()=>router.push("/adminLogin")
-                        ,
-                        children: "Admin"
-                    })
-                ]
-            })
-        ]
-    });
-};
-/* harmony default export */ const header = (HeaderComponent);
-
-;// CONCATENATED MODULE: ./pages/_app.tsx
-
-
-
-
-
-
-
-function MyApp({ Component , pageProps  }) {
-    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(external_react_redux_.Provider, {
-        store: store,
-        children: [
-            /*#__PURE__*/ jsx_runtime_.jsx(header, {}),
-            /*#__PURE__*/ jsx_runtime_.jsx(Component, {
-                ...pageProps
-            })
-        ]
-    });
-}
-/* harmony default export */ const _app = (MyApp);
-
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! semantic-ui-react */ \"semantic-ui-react\");\n/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _styles_components_header_module_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../styles/components/header.module.css */ \"./styles/components/header.module.css\");\n/* harmony import */ var _styles_components_header_module_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_styles_components_header_module_css__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/router */ \"next/router\");\n/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_3__);\n\n\n\n\n\nconst HeaderComponent = ()=>{\n    const router = (0,next_router__WEBPACK_IMPORTED_MODULE_3__.useRouter)();\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n        className: (_styles_components_header_module_css__WEBPACK_IMPORTED_MODULE_4___default().container),\n        children: [\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"h1\", {\n                onClick: ()=>router.push(\"/\")\n                ,\n                children: \"Chatbot\"\n            }, void 0, false, {\n                fileName: \"/home/ad.msystechnologies.com/vnaik/Documents/deepu/Chatbot-frontend/components/header.tsx\",\n                lineNumber: 12,\n                columnNumber: 7\n            }, undefined),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                className: (_styles_components_header_module_css__WEBPACK_IMPORTED_MODULE_4___default().rightBox),\n                children: [\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                        className: (_styles_components_header_module_css__WEBPACK_IMPORTED_MODULE_4___default().navContainer),\n                        children: [\n                            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                                className: (_styles_components_header_module_css__WEBPACK_IMPORTED_MODULE_4___default().navItem),\n                                onClick: ()=>router.push(\"/\")\n                                ,\n                                children: \"Home\"\n                            }, void 0, false, {\n                                fileName: \"/home/ad.msystechnologies.com/vnaik/Documents/deepu/Chatbot-frontend/components/header.tsx\",\n                                lineNumber: 15,\n                                columnNumber: 11\n                            }, undefined),\n                            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                                className: (_styles_components_header_module_css__WEBPACK_IMPORTED_MODULE_4___default().navItem),\n                                onClick: ()=>router.push(\"/dashboard\")\n                                ,\n                                children: \"Dashboard\"\n                            }, void 0, false, {\n                                fileName: \"/home/ad.msystechnologies.com/vnaik/Documents/deepu/Chatbot-frontend/components/header.tsx\",\n                                lineNumber: 18,\n                                columnNumber: 11\n                            }, undefined),\n                            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                                className: (_styles_components_header_module_css__WEBPACK_IMPORTED_MODULE_4___default().navItem),\n                                onClick: ()=>router.push(\"/login\")\n                                ,\n                                children: \"Login\"\n                            }, void 0, false, {\n                                fileName: \"/home/ad.msystechnologies.com/vnaik/Documents/deepu/Chatbot-frontend/components/header.tsx\",\n                                lineNumber: 24,\n                                columnNumber: 11\n                            }, undefined),\n                            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                                className: (_styles_components_header_module_css__WEBPACK_IMPORTED_MODULE_4___default().navItem),\n                                onClick: ()=>router.push(\"/register\")\n                                ,\n                                children: \"Register\"\n                            }, void 0, false, {\n                                fileName: \"/home/ad.msystechnologies.com/vnaik/Documents/deepu/Chatbot-frontend/components/header.tsx\",\n                                lineNumber: 27,\n                                columnNumber: 11\n                            }, undefined),\n                            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                                className: (_styles_components_header_module_css__WEBPACK_IMPORTED_MODULE_4___default().navItem),\n                                onClick: ()=>router.push(\"/feedback\")\n                                ,\n                                children: \"Feedback\"\n                            }, void 0, false, {\n                                fileName: \"/home/ad.msystechnologies.com/vnaik/Documents/deepu/Chatbot-frontend/components/header.tsx\",\n                                lineNumber: 33,\n                                columnNumber: 11\n                            }, undefined),\n                            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                                className: (_styles_components_header_module_css__WEBPACK_IMPORTED_MODULE_4___default().navItem),\n                                onClick: ()=>router.push(\"/help\")\n                                ,\n                                children: \"Help\"\n                            }, void 0, false, {\n                                fileName: \"/home/ad.msystechnologies.com/vnaik/Documents/deepu/Chatbot-frontend/components/header.tsx\",\n                                lineNumber: 39,\n                                columnNumber: 11\n                            }, undefined)\n                        ]\n                    }, void 0, true, {\n                        fileName: \"/home/ad.msystechnologies.com/vnaik/Documents/deepu/Chatbot-frontend/components/header.tsx\",\n                        lineNumber: 14,\n                        columnNumber: 9\n                    }, undefined),\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(semantic_ui_react__WEBPACK_IMPORTED_MODULE_1__.Button, {\n                        circular: true,\n                        inverted: true,\n                        color: \"green\",\n                        size: \"medium\",\n                        onClick: ()=>router.push(\"/adminLogin\")\n                        ,\n                        children: \"Admin\"\n                    }, void 0, false, {\n                        fileName: \"/home/ad.msystechnologies.com/vnaik/Documents/deepu/Chatbot-frontend/components/header.tsx\",\n                        lineNumber: 43,\n                        columnNumber: 9\n                    }, undefined)\n                ]\n            }, void 0, true, {\n                fileName: \"/home/ad.msystechnologies.com/vnaik/Documents/deepu/Chatbot-frontend/components/header.tsx\",\n                lineNumber: 13,\n                columnNumber: 7\n            }, undefined)\n        ]\n    }, void 0, true, {\n        fileName: \"/home/ad.msystechnologies.com/vnaik/Documents/deepu/Chatbot-frontend/components/header.tsx\",\n        lineNumber: 11,\n        columnNumber: 5\n    }, undefined);\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HeaderComponent);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jb21wb25lbnRzL2hlYWRlci50c3guanMiLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7QUFBQTtBQUEyQztBQUNnQjtBQUVqQztBQUNjO0FBRXhDLE1BQU1JLGVBQWUsR0FBRyxJQUFNO0lBQzVCLE1BQU1DLE1BQU0sR0FBR0Ysc0RBQVMsRUFBRTtJQUUxQixxQkFDRSw4REFBQ0csS0FBRztRQUFDQyxTQUFTLEVBQUVOLHVGQUFlOzswQkFDN0IsOERBQUNRLElBQUU7Z0JBQUNDLE9BQU8sRUFBRSxJQUFNTCxNQUFNLENBQUNNLElBQUksQ0FBQyxHQUFHLENBQUM7Z0JBQUE7MEJBQUUsU0FBTzs7Ozs7eUJBQUs7MEJBQ2pELDhEQUFDTCxLQUFHO2dCQUFDQyxTQUFTLEVBQUVOLHNGQUFjOztrQ0FDNUIsOERBQUNLLEtBQUc7d0JBQUNDLFNBQVMsRUFBRU4sMEZBQWtCOzswQ0FDaEMsOERBQUNLLEtBQUc7Z0NBQUNDLFNBQVMsRUFBRU4scUZBQWE7Z0NBQUVTLE9BQU8sRUFBRSxJQUFNTCxNQUFNLENBQUNNLElBQUksQ0FBQyxHQUFHLENBQUM7Z0NBQUE7MENBQUUsTUFFaEU7Ozs7O3lDQUFNOzBDQUNOLDhEQUFDTCxLQUFHO2dDQUNGQyxTQUFTLEVBQUVOLHFGQUFhO2dDQUN4QlMsT0FBTyxFQUFFLElBQU1MLE1BQU0sQ0FBQ00sSUFBSSxDQUFDLFlBQVksQ0FBQztnQ0FBQTswQ0FDekMsV0FFRDs7Ozs7eUNBQU07MENBQ04sOERBQUNMLEtBQUc7Z0NBQUNDLFNBQVMsRUFBRU4scUZBQWE7Z0NBQUVTLE9BQU8sRUFBRSxJQUFNTCxNQUFNLENBQUNNLElBQUksQ0FBQyxRQUFRLENBQUM7Z0NBQUE7MENBQUUsT0FFckU7Ozs7O3lDQUFNOzBDQUNOLDhEQUFDTCxLQUFHO2dDQUNGQyxTQUFTLEVBQUVOLHFGQUFhO2dDQUN4QlMsT0FBTyxFQUFFLElBQU1MLE1BQU0sQ0FBQ00sSUFBSSxDQUFDLFdBQVcsQ0FBQztnQ0FBQTswQ0FDeEMsVUFFRDs7Ozs7eUNBQU07MENBQ04sOERBQUNMLEtBQUc7Z0NBQ0ZDLFNBQVMsRUFBRU4scUZBQWE7Z0NBQ3hCUyxPQUFPLEVBQUUsSUFBTUwsTUFBTSxDQUFDTSxJQUFJLENBQUMsV0FBVyxDQUFDO2dDQUFBOzBDQUN4QyxVQUVEOzs7Ozt5Q0FBTTswQ0FDTiw4REFBQ0wsS0FBRztnQ0FBQ0MsU0FBUyxFQUFFTixxRkFBYTtnQ0FBRVMsT0FBTyxFQUFFLElBQU1MLE1BQU0sQ0FBQ00sSUFBSSxDQUFDLE9BQU8sQ0FBQztnQ0FBQTswQ0FBRSxNQUVwRTs7Ozs7eUNBQU07Ozs7OztpQ0FDRjtrQ0FDTiw4REFBQ1gscURBQU07d0JBQ0xlLFFBQVE7d0JBQ1JDLFFBQVE7d0JBQ1JDLEtBQUssRUFBQyxPQUFPO3dCQUNiQyxJQUFJLEVBQUMsUUFBUTt3QkFDYlIsT0FBTyxFQUFFLElBQU1MLE1BQU0sQ0FBQ00sSUFBSSxDQUFDLGFBQWEsQ0FBQzt3QkFBQTtrQ0FFWixPQUUvQjs7Ozs7aUNBQVM7Ozs7Ozt5QkFDTDs7Ozs7O2lCQUNGLENBQ047Q0FDSDtBQUVELGlFQUFlUCxlQUFlLEVBQUMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9uZXh0LXR5cGVzY3JpcHQvLi9jb21wb25lbnRzL2hlYWRlci50c3g/ODcwYyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBCdXR0b24gfSBmcm9tIFwic2VtYW50aWMtdWktcmVhY3RcIjtcbmltcG9ydCBzdHlsZSBmcm9tIFwiLi4vc3R5bGVzL2NvbXBvbmVudHMvaGVhZGVyLm1vZHVsZS5jc3NcIjtcblxuaW1wb3J0IFJlYWN0IGZyb20gXCJyZWFjdFwiO1xuaW1wb3J0IHsgdXNlUm91dGVyIH0gZnJvbSBcIm5leHQvcm91dGVyXCI7XG5cbmNvbnN0IEhlYWRlckNvbXBvbmVudCA9ICgpID0+IHtcbiAgY29uc3Qgcm91dGVyID0gdXNlUm91dGVyKCk7XG5cbiAgcmV0dXJuIChcbiAgICA8ZGl2IGNsYXNzTmFtZT17c3R5bGUuY29udGFpbmVyfT5cbiAgICAgIDxoMSBvbkNsaWNrPXsoKSA9PiByb3V0ZXIucHVzaChcIi9cIil9PkNoYXRib3Q8L2gxPlxuICAgICAgPGRpdiBjbGFzc05hbWU9e3N0eWxlLnJpZ2h0Qm94fT5cbiAgICAgICAgPGRpdiBjbGFzc05hbWU9e3N0eWxlLm5hdkNvbnRhaW5lcn0+XG4gICAgICAgICAgPGRpdiBjbGFzc05hbWU9e3N0eWxlLm5hdkl0ZW19IG9uQ2xpY2s9eygpID0+IHJvdXRlci5wdXNoKFwiL1wiKX0+XG4gICAgICAgICAgICBIb21lXG4gICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgPGRpdlxuICAgICAgICAgICAgY2xhc3NOYW1lPXtzdHlsZS5uYXZJdGVtfVxuICAgICAgICAgICAgb25DbGljaz17KCkgPT4gcm91dGVyLnB1c2goXCIvZGFzaGJvYXJkXCIpfVxuICAgICAgICAgID5cbiAgICAgICAgICAgIERhc2hib2FyZFxuICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPXtzdHlsZS5uYXZJdGVtfSBvbkNsaWNrPXsoKSA9PiByb3V0ZXIucHVzaChcIi9sb2dpblwiKX0+XG4gICAgICAgICAgICBMb2dpblxuICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgIGNsYXNzTmFtZT17c3R5bGUubmF2SXRlbX1cbiAgICAgICAgICAgIG9uQ2xpY2s9eygpID0+IHJvdXRlci5wdXNoKFwiL3JlZ2lzdGVyXCIpfVxuICAgICAgICAgID5cbiAgICAgICAgICAgIFJlZ2lzdGVyXG4gICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgPGRpdlxuICAgICAgICAgICAgY2xhc3NOYW1lPXtzdHlsZS5uYXZJdGVtfVxuICAgICAgICAgICAgb25DbGljaz17KCkgPT4gcm91dGVyLnB1c2goXCIvZmVlZGJhY2tcIil9XG4gICAgICAgICAgPlxuICAgICAgICAgICAgRmVlZGJhY2tcbiAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT17c3R5bGUubmF2SXRlbX0gb25DbGljaz17KCkgPT4gcm91dGVyLnB1c2goXCIvaGVscFwiKX0+XG4gICAgICAgICAgICBIZWxwXG4gICAgICAgICAgPC9kaXY+XG4gICAgICAgIDwvZGl2PlxuICAgICAgICA8QnV0dG9uXG4gICAgICAgICAgY2lyY3VsYXJcbiAgICAgICAgICBpbnZlcnRlZFxuICAgICAgICAgIGNvbG9yPVwiZ3JlZW5cIlxuICAgICAgICAgIHNpemU9XCJtZWRpdW1cIlxuICAgICAgICAgIG9uQ2xpY2s9eygpID0+IHJvdXRlci5wdXNoKFwiL2FkbWluTG9naW5cIil9XG4gICAgICAgID5cbiAgICAgICAgICB7LyogPEljb24gbmFtZT1cImFkbWluXCIgLz4gKi99XG4gICAgICAgICAgQWRtaW5cbiAgICAgICAgPC9CdXR0b24+XG4gICAgICA8L2Rpdj5cbiAgICA8L2Rpdj5cbiAgKTtcbn07XG5cbmV4cG9ydCBkZWZhdWx0IEhlYWRlckNvbXBvbmVudDtcbiJdLCJuYW1lcyI6WyJCdXR0b24iLCJzdHlsZSIsIlJlYWN0IiwidXNlUm91dGVyIiwiSGVhZGVyQ29tcG9uZW50Iiwicm91dGVyIiwiZGl2IiwiY2xhc3NOYW1lIiwiY29udGFpbmVyIiwiaDEiLCJvbkNsaWNrIiwicHVzaCIsInJpZ2h0Qm94IiwibmF2Q29udGFpbmVyIiwibmF2SXRlbSIsImNpcmN1bGFyIiwiaW52ZXJ0ZWQiLCJjb2xvciIsInNpemUiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./components/header.tsx\n");
 
 /***/ }),
 
-/***/ 104:
+/***/ "./pages/_app.tsx":
+/*!************************!*\
+  !*** ./pages/_app.tsx ***!
+  \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Xd": () => (/* binding */ updateAdminToken),
-/* harmony export */   "ZP": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* unused harmony export adminSlice */
-/* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(184);
-/* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__);
-
-const initialState = {
-    data: {
-        accessToken: "",
-        refreshToken: ""
-    }
-};
-const adminSlice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__.createSlice)({
-    name: "admin",
-    initialState,
-    reducers: {
-        updateAdminToken: (state, action)=>{
-            state.data = action.payload.data;
-        }
-    }
-});
-// Action creators are generated for each case reducer function
-const { updateAdminToken  } = adminSlice.actions;
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (adminSlice.reducer);
-
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var semantic_ui_css_semantic_min_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! semantic-ui-css/semantic.min.css */ \"./node_modules/semantic-ui-css/semantic.min.css\");\n/* harmony import */ var semantic_ui_css_semantic_min_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(semantic_ui_css_semantic_min_css__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var react_toastify_dist_ReactToastify_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-toastify/dist/ReactToastify.css */ \"./node_modules/react-toastify/dist/ReactToastify.css\");\n/* harmony import */ var react_toastify_dist_ReactToastify_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_toastify_dist_ReactToastify_css__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _styles_globals_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styles/globals.css */ \"./styles/globals.css\");\n/* harmony import */ var _styles_globals_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_globals_css__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _redux_store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../redux/store */ \"./redux/store.ts\");\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-redux */ \"react-redux\");\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_5__);\n/* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/header */ \"./components/header.tsx\");\n\n\n\n\n\n\n\nfunction MyApp({ Component , pageProps  }) {\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(react_redux__WEBPACK_IMPORTED_MODULE_5__.Provider, {\n        store: _redux_store__WEBPACK_IMPORTED_MODULE_4__.store,\n        children: [\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_components_header__WEBPACK_IMPORTED_MODULE_6__[\"default\"], {}, void 0, false, {\n                fileName: \"/home/ad.msystechnologies.com/vnaik/Documents/deepu/Chatbot-frontend/pages/_app.tsx\",\n                lineNumber: 12,\n                columnNumber: 7\n            }, this),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(Component, {\n                ...pageProps\n            }, void 0, false, {\n                fileName: \"/home/ad.msystechnologies.com/vnaik/Documents/deepu/Chatbot-frontend/pages/_app.tsx\",\n                lineNumber: 13,\n                columnNumber: 7\n            }, this)\n        ]\n    }, void 0, true, {\n        fileName: \"/home/ad.msystechnologies.com/vnaik/Documents/deepu/Chatbot-frontend/pages/_app.tsx\",\n        lineNumber: 11,\n        columnNumber: 5\n    }, this);\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MyApp);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9wYWdlcy9fYXBwLnRzeC5qcyIsIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7O0FBQUE7QUFBMEM7QUFDSztBQUNoQjtBQUVRO0FBQ0E7QUFDWTtBQUVuRCxTQUFTRyxLQUFLLENBQUMsRUFBRUMsU0FBUyxHQUFFQyxTQUFTLEdBQVksRUFBRTtJQUNqRCxxQkFDRSw4REFBQ0osaURBQVE7UUFBQ0QsS0FBSyxFQUFFQSwrQ0FBSzs7MEJBQ3BCLDhEQUFDRSwwREFBZTs7OztvQkFBRzswQkFDbkIsOERBQUNFLFNBQVM7Z0JBQUUsR0FBR0MsU0FBUzs7Ozs7b0JBQUk7Ozs7OztZQUNuQixDQUNYO0NBQ0g7QUFFRCxpRUFBZUYsS0FBSyxFQUFDIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vbmV4dC10eXBlc2NyaXB0Ly4vcGFnZXMvX2FwcC50c3g/MmZiZSJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgXCJzZW1hbnRpYy11aS1jc3Mvc2VtYW50aWMubWluLmNzc1wiO1xuaW1wb3J0IFwicmVhY3QtdG9hc3RpZnkvZGlzdC9SZWFjdFRvYXN0aWZ5LmNzc1wiO1xuaW1wb3J0IFwiLi4vc3R5bGVzL2dsb2JhbHMuY3NzXCI7XG5pbXBvcnQgdHlwZSB7IEFwcFByb3BzIH0gZnJvbSBcIm5leHQvYXBwXCI7XG5pbXBvcnQgeyBzdG9yZSB9IGZyb20gXCIuLi9yZWR1eC9zdG9yZVwiO1xuaW1wb3J0IHsgUHJvdmlkZXIgfSBmcm9tIFwicmVhY3QtcmVkdXhcIjtcbmltcG9ydCBIZWFkZXJDb21wb25lbnQgZnJvbSBcIi4uL2NvbXBvbmVudHMvaGVhZGVyXCI7XG5cbmZ1bmN0aW9uIE15QXBwKHsgQ29tcG9uZW50LCBwYWdlUHJvcHMgfTogQXBwUHJvcHMpIHtcbiAgcmV0dXJuIChcbiAgICA8UHJvdmlkZXIgc3RvcmU9e3N0b3JlfT5cbiAgICAgIDxIZWFkZXJDb21wb25lbnQgLz5cbiAgICAgIDxDb21wb25lbnQgey4uLnBhZ2VQcm9wc30gLz5cbiAgICA8L1Byb3ZpZGVyPlxuICApO1xufVxuXG5leHBvcnQgZGVmYXVsdCBNeUFwcDtcbiJdLCJuYW1lcyI6WyJzdG9yZSIsIlByb3ZpZGVyIiwiSGVhZGVyQ29tcG9uZW50IiwiTXlBcHAiLCJDb21wb25lbnQiLCJwYWdlUHJvcHMiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./pages/_app.tsx\n");
 
 /***/ }),
 
-/***/ 595:
+/***/ "./redux/api-query/blogsApi.ts":
+/*!*************************************!*\
+  !*** ./redux/api-query/blogsApi.ts ***!
+  \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Rj": () => (/* binding */ updateUserToken),
-/* harmony export */   "ZP": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* unused harmony export userSlice */
-/* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(184);
-/* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__);
-
-const initialState = {
-    data: {
-        accessToken: "",
-        refreshToken: ""
-    }
-};
-const userSlice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__.createSlice)({
-    name: "user",
-    initialState,
-    reducers: {
-        updateUserToken: (state, action)=>{
-            state.data = action.payload.data;
-        }
-    }
-});
-// Action creators are generated for each case reducer function
-const { updateUserToken  } = userSlice.actions;
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (userSlice.reducer);
-
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"blogsApi\": () => (/* binding */ blogsApi),\n/* harmony export */   \"useAddBlogMutation\": () => (/* binding */ useAddBlogMutation),\n/* harmony export */   \"useBlogQuery\": () => (/* binding */ useBlogQuery),\n/* harmony export */   \"useBlogsQuery\": () => (/* binding */ useBlogsQuery),\n/* harmony export */   \"useDeleteBlogMutation\": () => (/* binding */ useDeleteBlogMutation),\n/* harmony export */   \"useUpdateBlogMutation\": () => (/* binding */ useUpdateBlogMutation)\n/* harmony export */ });\n/* harmony import */ var _reduxjs_toolkit_query_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @reduxjs/toolkit/query/react */ \"@reduxjs/toolkit/query/react\");\n/* harmony import */ var _reduxjs_toolkit_query_react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_reduxjs_toolkit_query_react__WEBPACK_IMPORTED_MODULE_0__);\n\nconst blogsApi = (0,_reduxjs_toolkit_query_react__WEBPACK_IMPORTED_MODULE_0__.createApi)({\n    reducerPath: \"blogsApi\",\n    baseQuery: (0,_reduxjs_toolkit_query_react__WEBPACK_IMPORTED_MODULE_0__.fetchBaseQuery)({\n        baseUrl: \"http://localhost:1337/api\"\n    }),\n    tagTypes: [\n        \"Blog\"\n    ],\n    endpoints: (builder)=>({\n            blogs: builder.query({\n                query: ()=>\"/blogs\"\n            }),\n            blog: builder.query({\n                query: (id)=>`/blog/${id}`\n            }),\n            addBlog: builder.mutation({\n                query: (blog)=>({\n                        url: \"/blog\",\n                        method: \"POST\",\n                        body: blog\n                    })\n            }),\n            updateBlog: builder.mutation({\n                query: ({ blogId , ...rest })=>({\n                        url: `/blogs/${blogId}`,\n                        method: \"PUT\",\n                        body: rest\n                    })\n            }),\n            deleteBlog: builder.mutation({\n                query: (id)=>({\n                        url: `/blogs/${id}`,\n                        method: \"DELETE\"\n                    })\n            })\n        })\n});\nconst { useBlogsQuery , useBlogQuery , useAddBlogMutation , useUpdateBlogMutation , useDeleteBlogMutation ,  } = blogsApi;\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9yZWR1eC9hcGktcXVlcnkvYmxvZ3NBcGkudHMuanMiLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7QUFBeUU7QUFJbEUsTUFBTUUsUUFBUSxHQUFHRix1RUFBUyxDQUFDO0lBQ2hDRyxXQUFXLEVBQUUsVUFBVTtJQUN2QkMsU0FBUyxFQUFFSCw0RUFBYyxDQUFDO1FBQUVJLE9BQU8sRUFBRSwyQkFBMkI7S0FBRSxDQUFDO0lBQ25FQyxRQUFRLEVBQUU7UUFBQyxNQUFNO0tBQUM7SUFDbEJDLFNBQVMsRUFBRSxDQUFDQyxPQUFPLEdBQUssQ0FBQztZQUN2QkMsS0FBSyxFQUFFRCxPQUFPLENBQUNFLEtBQUssQ0FBaUI7Z0JBQ25DQSxLQUFLLEVBQUUsSUFBTSxRQUFRO2FBRXRCLENBQUM7WUFDRkMsSUFBSSxFQUFFSCxPQUFPLENBQUNFLEtBQUssQ0FBaUI7Z0JBQ2xDQSxLQUFLLEVBQUUsQ0FBQ0UsRUFBRSxHQUFLLENBQUMsTUFBTSxFQUFFQSxFQUFFLENBQUMsQ0FBQzthQUU3QixDQUFDO1lBQ0ZDLE9BQU8sRUFBRUwsT0FBTyxDQUFDTSxRQUFRLENBQW9CO2dCQUMzQ0osS0FBSyxFQUFFLENBQUNDLElBQUksR0FBSyxDQUFDO3dCQUNoQkksR0FBRyxFQUFFLE9BQU87d0JBQ1pDLE1BQU0sRUFBRSxNQUFNO3dCQUNkQyxJQUFJLEVBQUVOLElBQUk7cUJBQ1gsQ0FBQzthQUVILENBQUM7WUFDRk8sVUFBVSxFQUFFVixPQUFPLENBQUNNLFFBQVEsQ0FBZTtnQkFDekNKLEtBQUssRUFBRSxDQUFDLEVBQUVTLE1BQU0sR0FBRSxHQUFHQyxJQUFJLEVBQUUsR0FBSyxDQUFDO3dCQUMvQkwsR0FBRyxFQUFFLENBQUMsT0FBTyxFQUFFSSxNQUFNLENBQUMsQ0FBQzt3QkFDdkJILE1BQU0sRUFBRSxLQUFLO3dCQUNiQyxJQUFJLEVBQUVHLElBQUk7cUJBQ1gsQ0FBQzthQUVILENBQUM7WUFDRkMsVUFBVSxFQUFFYixPQUFPLENBQUNNLFFBQVEsQ0FBZTtnQkFDekNKLEtBQUssRUFBRSxDQUFDRSxFQUFFLEdBQUssQ0FBQzt3QkFDZEcsR0FBRyxFQUFFLENBQUMsT0FBTyxFQUFFSCxFQUFFLENBQUMsQ0FBQzt3QkFDbkJJLE1BQU0sRUFBRSxRQUFRO3FCQUNqQixDQUFDO2FBRUgsQ0FBQztTQUNILENBQUM7Q0FDSCxDQUFDLENBQUM7QUFFSSxNQUFNLEVBQ1hNLGFBQWEsR0FDYkMsWUFBWSxHQUNaQyxrQkFBa0IsR0FDbEJDLHFCQUFxQixHQUNyQkMscUJBQXFCLEtBQ3RCLEdBQUd4QixRQUFRLENBQUMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9uZXh0LXR5cGVzY3JpcHQvLi9yZWR1eC9hcGktcXVlcnkvYmxvZ3NBcGkudHM/MjE4NiJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBjcmVhdGVBcGksIGZldGNoQmFzZVF1ZXJ5IH0gZnJvbSBcIkByZWR1eGpzL3Rvb2xraXQvcXVlcnkvcmVhY3RcIjtcbmltcG9ydCB7IEJsb2dJRiB9IGZyb20gXCIuLi8uLi9tb2RlbHMvYmxvZy5tb2RlbFwiO1xuaW1wb3J0IHsgQWRkQmxvZ0Zvcm1JRiB9IGZyb20gXCIuLi8uLi9tb2RlbHMvZm9ybS5tb2RlbHNcIjtcblxuZXhwb3J0IGNvbnN0IGJsb2dzQXBpID0gY3JlYXRlQXBpKHtcbiAgcmVkdWNlclBhdGg6IFwiYmxvZ3NBcGlcIixcbiAgYmFzZVF1ZXJ5OiBmZXRjaEJhc2VRdWVyeSh7IGJhc2VVcmw6IFwiaHR0cDovL2xvY2FsaG9zdDoxMzM3L2FwaVwiIH0pLFxuICB0YWdUeXBlczogW1wiQmxvZ1wiXSxcbiAgZW5kcG9pbnRzOiAoYnVpbGRlcikgPT4gKHtcbiAgICBibG9nczogYnVpbGRlci5xdWVyeTxCbG9nSUZbXSwgdm9pZD4oe1xuICAgICAgcXVlcnk6ICgpID0+IFwiL2Jsb2dzXCIsXG4gICAgICAvLyBwcm92aWRlc1RhZ3M6IFtcIkJsb2dcIl0sXG4gICAgfSksXG4gICAgYmxvZzogYnVpbGRlci5xdWVyeTxCbG9nSUYsIHN0cmluZz4oe1xuICAgICAgcXVlcnk6IChpZCkgPT4gYC9ibG9nLyR7aWR9YCxcbiAgICAgIC8vIHByb3ZpZGVzVGFnczogW1wiQmxvZ1wiXSxcbiAgICB9KSxcbiAgICBhZGRCbG9nOiBidWlsZGVyLm11dGF0aW9uPHt9LCBBZGRCbG9nRm9ybUlGPih7XG4gICAgICBxdWVyeTogKGJsb2cpID0+ICh7XG4gICAgICAgIHVybDogXCIvYmxvZ1wiLFxuICAgICAgICBtZXRob2Q6IFwiUE9TVFwiLFxuICAgICAgICBib2R5OiBibG9nLFxuICAgICAgfSksXG4gICAgICAvLyBpbnZhbGlkYXRlc1RhZ3M6IFtcIkJsb2dcIl0sXG4gICAgfSksXG4gICAgdXBkYXRlQmxvZzogYnVpbGRlci5tdXRhdGlvbjx2b2lkLCBCbG9nSUY+KHtcbiAgICAgIHF1ZXJ5OiAoeyBibG9nSWQsIC4uLnJlc3QgfSkgPT4gKHtcbiAgICAgICAgdXJsOiBgL2Jsb2dzLyR7YmxvZ0lkfWAsXG4gICAgICAgIG1ldGhvZDogXCJQVVRcIixcbiAgICAgICAgYm9keTogcmVzdCxcbiAgICAgIH0pLFxuICAgICAgLy8gaW52YWxpZGF0ZXNUYWdzOiBbXCJCbG9nXCJdLFxuICAgIH0pLFxuICAgIGRlbGV0ZUJsb2c6IGJ1aWxkZXIubXV0YXRpb248dm9pZCwgc3RyaW5nPih7XG4gICAgICBxdWVyeTogKGlkKSA9PiAoe1xuICAgICAgICB1cmw6IGAvYmxvZ3MvJHtpZH1gLFxuICAgICAgICBtZXRob2Q6IFwiREVMRVRFXCIsXG4gICAgICB9KSxcbiAgICAgIC8vIGludmFsaWRhdGVzVGFnczogW1wiQmxvZ1wiXSxcbiAgICB9KSxcbiAgfSksXG59KTtcblxuZXhwb3J0IGNvbnN0IHtcbiAgdXNlQmxvZ3NRdWVyeSxcbiAgdXNlQmxvZ1F1ZXJ5LFxuICB1c2VBZGRCbG9nTXV0YXRpb24sXG4gIHVzZVVwZGF0ZUJsb2dNdXRhdGlvbixcbiAgdXNlRGVsZXRlQmxvZ011dGF0aW9uLFxufSA9IGJsb2dzQXBpO1xuIl0sIm5hbWVzIjpbImNyZWF0ZUFwaSIsImZldGNoQmFzZVF1ZXJ5IiwiYmxvZ3NBcGkiLCJyZWR1Y2VyUGF0aCIsImJhc2VRdWVyeSIsImJhc2VVcmwiLCJ0YWdUeXBlcyIsImVuZHBvaW50cyIsImJ1aWxkZXIiLCJibG9ncyIsInF1ZXJ5IiwiYmxvZyIsImlkIiwiYWRkQmxvZyIsIm11dGF0aW9uIiwidXJsIiwibWV0aG9kIiwiYm9keSIsInVwZGF0ZUJsb2ciLCJibG9nSWQiLCJyZXN0IiwiZGVsZXRlQmxvZyIsInVzZUJsb2dzUXVlcnkiLCJ1c2VCbG9nUXVlcnkiLCJ1c2VBZGRCbG9nTXV0YXRpb24iLCJ1c2VVcGRhdGVCbG9nTXV0YXRpb24iLCJ1c2VEZWxldGVCbG9nTXV0YXRpb24iXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./redux/api-query/blogsApi.ts\n");
 
 /***/ }),
 
-/***/ 819:
+/***/ "./redux/redux-toolkit/adminSlice.ts":
+/*!*******************************************!*\
+  !*** ./redux/redux-toolkit/adminSlice.ts ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"adminSlice\": () => (/* binding */ adminSlice),\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__),\n/* harmony export */   \"updateAdminToken\": () => (/* binding */ updateAdminToken)\n/* harmony export */ });\n/* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @reduxjs/toolkit */ \"@reduxjs/toolkit\");\n/* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__);\n\nconst initialState = {\n    data: {\n        accessToken: \"\",\n        refreshToken: \"\"\n    }\n};\nconst adminSlice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__.createSlice)({\n    name: \"admin\",\n    initialState,\n    reducers: {\n        updateAdminToken: (state, action)=>{\n            state.data = action.payload.data;\n        }\n    }\n});\n// Action creators are generated for each case reducer function\nconst { updateAdminToken  } = adminSlice.actions;\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (adminSlice.reducer);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9yZWR1eC9yZWR1eC10b29sa2l0L2FkbWluU2xpY2UudHMuanMiLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7QUFBOEQ7QUFNOUQsTUFBTUMsWUFBWSxHQUFlO0lBQy9CQyxJQUFJLEVBQUU7UUFBRUMsV0FBVyxFQUFFLEVBQUU7UUFBRUMsWUFBWSxFQUFFLEVBQUU7S0FBRTtDQUM1QztBQUVNLE1BQU1DLFVBQVUsR0FBR0wsNkRBQVcsQ0FBQztJQUNwQ00sSUFBSSxFQUFFLE9BQU87SUFDYkwsWUFBWTtJQUNaTSxRQUFRLEVBQUU7UUFDUkMsZ0JBQWdCLEVBQUUsQ0FBQ0MsS0FBSyxFQUFFQyxNQUEwQixHQUFLO1lBQ3ZERCxLQUFLLENBQUNQLElBQUksR0FBR1EsTUFBTSxDQUFDQyxPQUFPLENBQUNULElBQUksQ0FBQztTQUNsQztLQUNGO0NBQ0YsQ0FBQyxDQUFDO0FBRUgsK0RBQStEO0FBQ3hELE1BQU0sRUFBRU0sZ0JBQWdCLEdBQUUsR0FBR0gsVUFBVSxDQUFDTyxPQUFPLENBQUM7QUFFdkQsaUVBQWVQLFVBQVUsQ0FBQ1EsT0FBTyxFQUFDIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vbmV4dC10eXBlc2NyaXB0Ly4vcmVkdXgvcmVkdXgtdG9vbGtpdC9hZG1pblNsaWNlLnRzPzQ2MTQiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgY3JlYXRlU2xpY2UsIFBheWxvYWRBY3Rpb24gfSBmcm9tIFwiQHJlZHV4anMvdG9vbGtpdFwiO1xuXG5leHBvcnQgaW50ZXJmYWNlIEFkbWluU3RhdGUge1xuICBkYXRhOiB7IGFjY2Vzc1Rva2VuOiBzdHJpbmc7IHJlZnJlc2hUb2tlbjogc3RyaW5nIH07XG59XG5cbmNvbnN0IGluaXRpYWxTdGF0ZTogQWRtaW5TdGF0ZSA9IHtcbiAgZGF0YTogeyBhY2Nlc3NUb2tlbjogXCJcIiwgcmVmcmVzaFRva2VuOiBcIlwiIH0sXG59O1xuXG5leHBvcnQgY29uc3QgYWRtaW5TbGljZSA9IGNyZWF0ZVNsaWNlKHtcbiAgbmFtZTogXCJhZG1pblwiLFxuICBpbml0aWFsU3RhdGUsXG4gIHJlZHVjZXJzOiB7XG4gICAgdXBkYXRlQWRtaW5Ub2tlbjogKHN0YXRlLCBhY3Rpb246IFBheWxvYWRBY3Rpb248YW55PikgPT4ge1xuICAgICAgc3RhdGUuZGF0YSA9IGFjdGlvbi5wYXlsb2FkLmRhdGE7XG4gICAgfSxcbiAgfSxcbn0pO1xuXG4vLyBBY3Rpb24gY3JlYXRvcnMgYXJlIGdlbmVyYXRlZCBmb3IgZWFjaCBjYXNlIHJlZHVjZXIgZnVuY3Rpb25cbmV4cG9ydCBjb25zdCB7IHVwZGF0ZUFkbWluVG9rZW4gfSA9IGFkbWluU2xpY2UuYWN0aW9ucztcblxuZXhwb3J0IGRlZmF1bHQgYWRtaW5TbGljZS5yZWR1Y2VyO1xuIl0sIm5hbWVzIjpbImNyZWF0ZVNsaWNlIiwiaW5pdGlhbFN0YXRlIiwiZGF0YSIsImFjY2Vzc1Rva2VuIiwicmVmcmVzaFRva2VuIiwiYWRtaW5TbGljZSIsIm5hbWUiLCJyZWR1Y2VycyIsInVwZGF0ZUFkbWluVG9rZW4iLCJzdGF0ZSIsImFjdGlvbiIsInBheWxvYWQiLCJhY3Rpb25zIiwicmVkdWNlciJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./redux/redux-toolkit/adminSlice.ts\n");
+
+/***/ }),
+
+/***/ "./redux/redux-toolkit/counterSlice.ts":
+/*!*********************************************!*\
+  !*** ./redux/redux-toolkit/counterSlice.ts ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"counterSlice\": () => (/* binding */ counterSlice),\n/* harmony export */   \"decrement\": () => (/* binding */ decrement),\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__),\n/* harmony export */   \"increment\": () => (/* binding */ increment),\n/* harmony export */   \"incrementByAmount\": () => (/* binding */ incrementByAmount)\n/* harmony export */ });\n/* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @reduxjs/toolkit */ \"@reduxjs/toolkit\");\n/* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__);\n\nconst initialState = {\n    counterValue: 0\n};\nconst counterSlice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__.createSlice)({\n    name: \"counter\",\n    initialState,\n    reducers: {\n        increment: (state, action)=>{\n            state.counterValue += action.payload;\n        },\n        decrement: (state, action)=>{\n            state.counterValue -= action.payload;\n        },\n        incrementByAmount: (state, action)=>{\n            state.counterValue += action.payload;\n        }\n    }\n});\n// Action creators are generated for each case reducer function\nconst { increment , decrement , incrementByAmount  } = counterSlice.actions;\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (counterSlice.reducer);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9yZWR1eC9yZWR1eC10b29sa2l0L2NvdW50ZXJTbGljZS50cy5qcyIsIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7O0FBQThEO0FBTTlELE1BQU1DLFlBQVksR0FBaUI7SUFDakNDLFlBQVksRUFBRSxDQUFDO0NBQ2hCO0FBRU0sTUFBTUMsWUFBWSxHQUFHSCw2REFBVyxDQUFDO0lBQ3RDSSxJQUFJLEVBQUUsU0FBUztJQUNmSCxZQUFZO0lBQ1pJLFFBQVEsRUFBRTtRQUNSQyxTQUFTLEVBQUUsQ0FBQ0MsS0FBSyxFQUFFQyxNQUE2QixHQUFLO1lBQ25ERCxLQUFLLENBQUNMLFlBQVksSUFBSU0sTUFBTSxDQUFDQyxPQUFPLENBQUM7U0FDdEM7UUFDREMsU0FBUyxFQUFFLENBQUNILEtBQUssRUFBRUMsTUFBNkIsR0FBSztZQUNuREQsS0FBSyxDQUFDTCxZQUFZLElBQUlNLE1BQU0sQ0FBQ0MsT0FBTyxDQUFDO1NBQ3RDO1FBQ0RFLGlCQUFpQixFQUFFLENBQUNKLEtBQUssRUFBRUMsTUFBNkIsR0FBSztZQUMzREQsS0FBSyxDQUFDTCxZQUFZLElBQUlNLE1BQU0sQ0FBQ0MsT0FBTyxDQUFDO1NBQ3RDO0tBQ0Y7Q0FDRixDQUFDLENBQUM7QUFFSCwrREFBK0Q7QUFDeEQsTUFBTSxFQUFFSCxTQUFTLEdBQUVJLFNBQVMsR0FBRUMsaUJBQWlCLEdBQUUsR0FBR1IsWUFBWSxDQUFDUyxPQUFPLENBQUM7QUFFaEYsaUVBQWVULFlBQVksQ0FBQ1UsT0FBTyxFQUFDIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vbmV4dC10eXBlc2NyaXB0Ly4vcmVkdXgvcmVkdXgtdG9vbGtpdC9jb3VudGVyU2xpY2UudHM/Mjg3MSJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBjcmVhdGVTbGljZSwgUGF5bG9hZEFjdGlvbiB9IGZyb20gXCJAcmVkdXhqcy90b29sa2l0XCI7XG5cbmV4cG9ydCBpbnRlcmZhY2UgQ291bnRlclN0YXRlIHtcbiAgY291bnRlclZhbHVlOiBudW1iZXI7XG59XG5cbmNvbnN0IGluaXRpYWxTdGF0ZTogQ291bnRlclN0YXRlID0ge1xuICBjb3VudGVyVmFsdWU6IDAsXG59O1xuXG5leHBvcnQgY29uc3QgY291bnRlclNsaWNlID0gY3JlYXRlU2xpY2Uoe1xuICBuYW1lOiBcImNvdW50ZXJcIixcbiAgaW5pdGlhbFN0YXRlLFxuICByZWR1Y2Vyczoge1xuICAgIGluY3JlbWVudDogKHN0YXRlLCBhY3Rpb246IFBheWxvYWRBY3Rpb248bnVtYmVyPikgPT4ge1xuICAgICAgc3RhdGUuY291bnRlclZhbHVlICs9IGFjdGlvbi5wYXlsb2FkO1xuICAgIH0sXG4gICAgZGVjcmVtZW50OiAoc3RhdGUsIGFjdGlvbjogUGF5bG9hZEFjdGlvbjxudW1iZXI+KSA9PiB7XG4gICAgICBzdGF0ZS5jb3VudGVyVmFsdWUgLT0gYWN0aW9uLnBheWxvYWQ7XG4gICAgfSxcbiAgICBpbmNyZW1lbnRCeUFtb3VudDogKHN0YXRlLCBhY3Rpb246IFBheWxvYWRBY3Rpb248bnVtYmVyPikgPT4ge1xuICAgICAgc3RhdGUuY291bnRlclZhbHVlICs9IGFjdGlvbi5wYXlsb2FkO1xuICAgIH0sXG4gIH0sXG59KTtcblxuLy8gQWN0aW9uIGNyZWF0b3JzIGFyZSBnZW5lcmF0ZWQgZm9yIGVhY2ggY2FzZSByZWR1Y2VyIGZ1bmN0aW9uXG5leHBvcnQgY29uc3QgeyBpbmNyZW1lbnQsIGRlY3JlbWVudCwgaW5jcmVtZW50QnlBbW91bnQgfSA9IGNvdW50ZXJTbGljZS5hY3Rpb25zO1xuXG5leHBvcnQgZGVmYXVsdCBjb3VudGVyU2xpY2UucmVkdWNlcjtcbiJdLCJuYW1lcyI6WyJjcmVhdGVTbGljZSIsImluaXRpYWxTdGF0ZSIsImNvdW50ZXJWYWx1ZSIsImNvdW50ZXJTbGljZSIsIm5hbWUiLCJyZWR1Y2VycyIsImluY3JlbWVudCIsInN0YXRlIiwiYWN0aW9uIiwicGF5bG9hZCIsImRlY3JlbWVudCIsImluY3JlbWVudEJ5QW1vdW50IiwiYWN0aW9ucyIsInJlZHVjZXIiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./redux/redux-toolkit/counterSlice.ts\n");
+
+/***/ }),
+
+/***/ "./redux/redux-toolkit/userSlice.ts":
+/*!******************************************!*\
+  !*** ./redux/redux-toolkit/userSlice.ts ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__),\n/* harmony export */   \"updateUserToken\": () => (/* binding */ updateUserToken),\n/* harmony export */   \"userSlice\": () => (/* binding */ userSlice)\n/* harmony export */ });\n/* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @reduxjs/toolkit */ \"@reduxjs/toolkit\");\n/* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__);\n\nconst initialState = {\n    data: {\n        accessToken: \"\",\n        refreshToken: \"\"\n    }\n};\nconst userSlice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__.createSlice)({\n    name: \"user\",\n    initialState,\n    reducers: {\n        updateUserToken: (state, action)=>{\n            state.data = action.payload.data;\n        }\n    }\n});\n// Action creators are generated for each case reducer function\nconst { updateUserToken  } = userSlice.actions;\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (userSlice.reducer);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9yZWR1eC9yZWR1eC10b29sa2l0L3VzZXJTbGljZS50cy5qcyIsIm1hcHBpbmdzIjoiOzs7Ozs7OztBQUE4RDtBQU05RCxNQUFNQyxZQUFZLEdBQWM7SUFDOUJDLElBQUksRUFBRTtRQUFFQyxXQUFXLEVBQUUsRUFBRTtRQUFFQyxZQUFZLEVBQUUsRUFBRTtLQUFFO0NBQzVDO0FBRU0sTUFBTUMsU0FBUyxHQUFHTCw2REFBVyxDQUFDO0lBQ25DTSxJQUFJLEVBQUUsTUFBTTtJQUNaTCxZQUFZO0lBQ1pNLFFBQVEsRUFBRTtRQUNSQyxlQUFlLEVBQUUsQ0FBQ0MsS0FBSyxFQUFFQyxNQUEwQixHQUFLO1lBQ3RERCxLQUFLLENBQUNQLElBQUksR0FBR1EsTUFBTSxDQUFDQyxPQUFPLENBQUNULElBQUksQ0FBQztTQUNsQztLQUNGO0NBQ0YsQ0FBQyxDQUFDO0FBRUgsK0RBQStEO0FBQ3hELE1BQU0sRUFBRU0sZUFBZSxHQUFFLEdBQUdILFNBQVMsQ0FBQ08sT0FBTyxDQUFDO0FBRXJELGlFQUFlUCxTQUFTLENBQUNRLE9BQU8sRUFBQyIsInNvdXJjZXMiOlsid2VicGFjazovL25leHQtdHlwZXNjcmlwdC8uL3JlZHV4L3JlZHV4LXRvb2xraXQvdXNlclNsaWNlLnRzP2NiN2YiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgY3JlYXRlU2xpY2UsIFBheWxvYWRBY3Rpb24gfSBmcm9tIFwiQHJlZHV4anMvdG9vbGtpdFwiO1xuXG5leHBvcnQgaW50ZXJmYWNlIFVzZXJTdGF0ZSB7XG4gIGRhdGE6IHsgYWNjZXNzVG9rZW46IHN0cmluZzsgcmVmcmVzaFRva2VuOiBzdHJpbmcgfTtcbn1cblxuY29uc3QgaW5pdGlhbFN0YXRlOiBVc2VyU3RhdGUgPSB7XG4gIGRhdGE6IHsgYWNjZXNzVG9rZW46IFwiXCIsIHJlZnJlc2hUb2tlbjogXCJcIiB9LFxufTtcblxuZXhwb3J0IGNvbnN0IHVzZXJTbGljZSA9IGNyZWF0ZVNsaWNlKHtcbiAgbmFtZTogXCJ1c2VyXCIsXG4gIGluaXRpYWxTdGF0ZSxcbiAgcmVkdWNlcnM6IHtcbiAgICB1cGRhdGVVc2VyVG9rZW46IChzdGF0ZSwgYWN0aW9uOiBQYXlsb2FkQWN0aW9uPGFueT4pID0+IHtcbiAgICAgIHN0YXRlLmRhdGEgPSBhY3Rpb24ucGF5bG9hZC5kYXRhO1xuICAgIH0sXG4gIH0sXG59KTtcblxuLy8gQWN0aW9uIGNyZWF0b3JzIGFyZSBnZW5lcmF0ZWQgZm9yIGVhY2ggY2FzZSByZWR1Y2VyIGZ1bmN0aW9uXG5leHBvcnQgY29uc3QgeyB1cGRhdGVVc2VyVG9rZW4gfSA9IHVzZXJTbGljZS5hY3Rpb25zO1xuXG5leHBvcnQgZGVmYXVsdCB1c2VyU2xpY2UucmVkdWNlcjtcbiJdLCJuYW1lcyI6WyJjcmVhdGVTbGljZSIsImluaXRpYWxTdGF0ZSIsImRhdGEiLCJhY2Nlc3NUb2tlbiIsInJlZnJlc2hUb2tlbiIsInVzZXJTbGljZSIsIm5hbWUiLCJyZWR1Y2VycyIsInVwZGF0ZVVzZXJUb2tlbiIsInN0YXRlIiwiYWN0aW9uIiwicGF5bG9hZCIsImFjdGlvbnMiLCJyZWR1Y2VyIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./redux/redux-toolkit/userSlice.ts\n");
+
+/***/ }),
+
+/***/ "./redux/store.ts":
+/*!************************!*\
+  !*** ./redux/store.ts ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"store\": () => (/* binding */ store)\n/* harmony export */ });\n/* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @reduxjs/toolkit */ \"@reduxjs/toolkit\");\n/* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _api_query_blogsApi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./api-query/blogsApi */ \"./redux/api-query/blogsApi.ts\");\n/* harmony import */ var _redux_toolkit_counterSlice__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./redux-toolkit/counterSlice */ \"./redux/redux-toolkit/counterSlice.ts\");\n/* harmony import */ var _redux_toolkit_adminSlice__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./redux-toolkit/adminSlice */ \"./redux/redux-toolkit/adminSlice.ts\");\n/* harmony import */ var _redux_toolkit_userSlice__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./redux-toolkit/userSlice */ \"./redux/redux-toolkit/userSlice.ts\");\n\n\n\n\n\nconst store = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__.configureStore)({\n    reducer: {\n        counter: _redux_toolkit_counterSlice__WEBPACK_IMPORTED_MODULE_2__[\"default\"],\n        admin: _redux_toolkit_adminSlice__WEBPACK_IMPORTED_MODULE_3__[\"default\"],\n        user: _redux_toolkit_userSlice__WEBPACK_IMPORTED_MODULE_4__[\"default\"],\n        [_api_query_blogsApi__WEBPACK_IMPORTED_MODULE_1__.blogsApi.reducerPath]: _api_query_blogsApi__WEBPACK_IMPORTED_MODULE_1__.blogsApi.reducer\n    }\n});\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9yZWR1eC9zdG9yZS50cy5qcyIsIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7O0FBQWtEO0FBQ0Y7QUFDVTtBQUNKO0FBQ0Y7QUFFN0MsTUFBTUssS0FBSyxHQUFHTCxnRUFBYyxDQUFDO0lBQ2xDTSxPQUFPLEVBQUU7UUFDUEMsT0FBTyxFQUFFTCxtRUFBYztRQUN2Qk0sS0FBSyxFQUFFTCxpRUFBWTtRQUNuQk0sSUFBSSxFQUFFTCxnRUFBVztRQUNqQixDQUFDSCxxRUFBb0IsQ0FBQyxFQUFFQSxpRUFBZ0I7S0FDekM7Q0FDRixDQUFDLENBQUMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9uZXh0LXR5cGVzY3JpcHQvLi9yZWR1eC9zdG9yZS50cz85M2FmIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IGNvbmZpZ3VyZVN0b3JlIH0gZnJvbSBcIkByZWR1eGpzL3Rvb2xraXRcIjtcbmltcG9ydCB7IGJsb2dzQXBpIH0gZnJvbSBcIi4vYXBpLXF1ZXJ5L2Jsb2dzQXBpXCI7XG5pbXBvcnQgY291bnRlclJlZHVjZXIgZnJvbSBcIi4vcmVkdXgtdG9vbGtpdC9jb3VudGVyU2xpY2VcIjtcbmltcG9ydCBhZG1pblJlZHVjZXIgZnJvbSBcIi4vcmVkdXgtdG9vbGtpdC9hZG1pblNsaWNlXCI7XG5pbXBvcnQgdXNlclJlZHVjZXIgZnJvbSBcIi4vcmVkdXgtdG9vbGtpdC91c2VyU2xpY2VcIjtcblxuZXhwb3J0IGNvbnN0IHN0b3JlID0gY29uZmlndXJlU3RvcmUoe1xuICByZWR1Y2VyOiB7XG4gICAgY291bnRlcjogY291bnRlclJlZHVjZXIsXG4gICAgYWRtaW46IGFkbWluUmVkdWNlcixcbiAgICB1c2VyOiB1c2VyUmVkdWNlcixcbiAgICBbYmxvZ3NBcGkucmVkdWNlclBhdGhdOiBibG9nc0FwaS5yZWR1Y2VyLFxuICB9LFxufSk7XG5cbi8vIEluZmVyIHRoZSBgUm9vdFN0YXRlYCBhbmQgYEFwcERpc3BhdGNoYCB0eXBlcyBmcm9tIHRoZSBzdG9yZSBpdHNlbGZcbmV4cG9ydCB0eXBlIFJvb3RTdGF0ZSA9IFJldHVyblR5cGU8dHlwZW9mIHN0b3JlLmdldFN0YXRlPjtcbi8vIEluZmVycmVkIHR5cGU6IHtwb3N0czogUG9zdHNTdGF0ZSwgY29tbWVudHM6IENvbW1lbnRzU3RhdGUsIHVzZXJzOiBVc2Vyc1N0YXRlfVxuZXhwb3J0IHR5cGUgQXBwRGlzcGF0Y2ggPSB0eXBlb2Ygc3RvcmUuZGlzcGF0Y2g7XG4iXSwibmFtZXMiOlsiY29uZmlndXJlU3RvcmUiLCJibG9nc0FwaSIsImNvdW50ZXJSZWR1Y2VyIiwiYWRtaW5SZWR1Y2VyIiwidXNlclJlZHVjZXIiLCJzdG9yZSIsInJlZHVjZXIiLCJjb3VudGVyIiwiYWRtaW4iLCJ1c2VyIiwicmVkdWNlclBhdGgiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./redux/store.ts\n");
+
+/***/ }),
+
+/***/ "./node_modules/react-toastify/dist/ReactToastify.css":
+/*!************************************************************!*\
+  !*** ./node_modules/react-toastify/dist/ReactToastify.css ***!
+  \************************************************************/
 /***/ (() => {
 
 
 
 /***/ }),
 
-/***/ 184:
+/***/ "./node_modules/semantic-ui-css/semantic.min.css":
+/*!*******************************************************!*\
+  !*** ./node_modules/semantic-ui-css/semantic.min.css ***!
+  \*******************************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./styles/globals.css":
+/*!****************************!*\
+  !*** ./styles/globals.css ***!
+  \****************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "@reduxjs/toolkit":
+/*!***********************************!*\
+  !*** external "@reduxjs/toolkit" ***!
+  \***********************************/
 /***/ ((module) => {
 
 "use strict";
@@ -319,7 +140,10 @@ module.exports = require("@reduxjs/toolkit");
 
 /***/ }),
 
-/***/ 335:
+/***/ "@reduxjs/toolkit/query/react":
+/*!***********************************************!*\
+  !*** external "@reduxjs/toolkit/query/react" ***!
+  \***********************************************/
 /***/ ((module) => {
 
 "use strict";
@@ -327,7 +151,10 @@ module.exports = require("@reduxjs/toolkit/query/react");
 
 /***/ }),
 
-/***/ 853:
+/***/ "next/router":
+/*!******************************!*\
+  !*** external "next/router" ***!
+  \******************************/
 /***/ ((module) => {
 
 "use strict";
@@ -335,7 +162,10 @@ module.exports = require("next/router");
 
 /***/ }),
 
-/***/ 689:
+/***/ "react":
+/*!************************!*\
+  !*** external "react" ***!
+  \************************/
 /***/ ((module) => {
 
 "use strict";
@@ -343,7 +173,10 @@ module.exports = require("react");
 
 /***/ }),
 
-/***/ 22:
+/***/ "react-redux":
+/*!******************************!*\
+  !*** external "react-redux" ***!
+  \******************************/
 /***/ ((module) => {
 
 "use strict";
@@ -351,11 +184,25 @@ module.exports = require("react-redux");
 
 /***/ }),
 
-/***/ 997:
+/***/ "react/jsx-dev-runtime":
+/*!****************************************!*\
+  !*** external "react/jsx-dev-runtime" ***!
+  \****************************************/
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("react/jsx-runtime");
+module.exports = require("react/jsx-dev-runtime");
+
+/***/ }),
+
+/***/ "semantic-ui-react":
+/*!************************************!*\
+  !*** external "semantic-ui-react" ***!
+  \************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("semantic-ui-react");
 
 /***/ })
 
@@ -366,7 +213,7 @@ module.exports = require("react/jsx-runtime");
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = (__webpack_exec__(167));
+var __webpack_exports__ = (__webpack_exec__("./pages/_app.tsx"));
 module.exports = __webpack_exports__;
 
 })();

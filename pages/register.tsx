@@ -4,9 +4,9 @@ import * as Yup from "yup";
 import { TextField, Button } from "@mui/material";
 import TextError from "../components/atoms/textError";
 import { UserRegisterFormIF } from "../models/user.model";
-import { useUserRegisterMutation } from "../redux/api-query/userApi";
 import { useRouter } from "next/router";
 import style from "../styles/pages/userRegister.module.css";
+import { ToastContainer, toast } from "react-toastify";
 
 const initialValues = {
   name: "",
@@ -16,12 +16,18 @@ const initialValues = {
 };
 
 const validationSchema = Yup.object({
+  name: Yup.string().required("Required"),
   email: Yup.string().email("Invalid email format").required("Required"),
-  password: Yup.string().required("Required"),
+  password: Yup.string()
+    .required("Password is required")
+    .min(6, "must be 6 characters"),
+  passwordConfirmation: Yup.string()
+    .required("Password Confirmation is required")
+    .oneOf([Yup.ref("password"), null], "Passwords must match"),
 });
 
 const UserRegisterForm = () => {
-  const [addMessage] = useUserRegisterMutation();
+  const url = "https://collage-enquiry-system-chatbot.herokuapp.com/api";
 
   const router = useRouter();
   if (typeof window !== "undefined") {
@@ -33,9 +39,29 @@ const UserRegisterForm = () => {
   }
 
   const onSubmit = async (values: UserRegisterFormIF) => {
-    console.log(values);
-    await addMessage(values);
-    router.push("/login");
+    fetch(`${url}/users`, {
+      method: "POST", // or 'PUT'
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(values),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        if (data.email) {
+          toast.success("Register Successful");
+          setTimeout(() => {
+            router.push("/login");
+          }, 2000);
+        } else {
+          toast.error("Failed");
+        }
+      })
+      .catch((error) => {
+        toast.error("Failed");
+        console.error("Error:", error);
+      });
   };
   return (
     <Formik
@@ -81,7 +107,7 @@ const UserRegisterForm = () => {
                 <TextField
                   type="password"
                   id="passwordConfirmation"
-                  label="passwordConfirmation"
+                  label="password Confirmation"
                   variant="outlined"
                   {...formik.getFieldProps("passwordConfirmation")}
                 />
@@ -95,6 +121,7 @@ const UserRegisterForm = () => {
                   Submit
                 </Button>
               </div>
+              <ToastContainer />
             </Form>
           </div>
         );
